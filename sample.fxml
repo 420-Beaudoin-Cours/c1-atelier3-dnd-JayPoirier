@@ -19,7 +19,7 @@
       <Pane prefHeight="136.0" prefWidth="343.0">
          <children>
             <TextField fx:id="txfSource" layoutX="14.0" layoutY="8.0" onDragDetected="#txfSourceDragDetected" />
-            <TextField fx:id="txfTarget" layoutX="14.0" layoutY="39.0" onDragDetected="#txfSourceDragDetected" />
+            <TextField fx:id="txfTarget" layoutX="14.0" layoutY="39.0" onDragDropped="#txfTargetDragDrop" onDragOver="#txfTargetDragOver"/>
             <TextField layoutX="14.0" layoutY="68.0" onDragDetected="#txfSourceDragDetected" />
             <TextField layoutX="14.0" layoutY="97.0" onDragDetected="#txfSourceDragDetected" />
             <ImageView fx:id="imvTarget" fitHeight="74.0" fitWidth="63.0" layoutX="228.0" layoutY="15.0" onDragDropped="#imvTargetDragDrop" onDragOver="#imvTargetDragOver" pickOnBounds="true" preserveRatio="true" />
