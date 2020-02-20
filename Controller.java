@@ -7,9 +7,9 @@ import javafx.scene.input.*;
 
 public class Controller {
 
-    public  TextField txfTarget;
-    public  TextField txfSource;
-    public  ComboBox cmbTarget;
+    public TextField txfTarget;
+    public TextField txfSource;
+    public ComboBox cmbTarget;
     public ImageView imvTarget;
 
     public void txfSourceDragDetected(MouseEvent mouseEvent) {
@@ -23,13 +23,9 @@ public class Controller {
 
     public void cmbTargetDragDrop(DragEvent dragEvent) {
         Dragboard db = dragEvent.getDragboard();
-        cmbTarget.getItems().add( db.getString() );
+        cmbTarget.getItems().add(db.getString());
         cmbTarget.getSelectionModel().selectLast();
         txfSource.clear();
-    }
-
-    public void cmbTargetDragOver(DragEvent dragEvent) {
-        dragEvent.acceptTransferModes( TransferMode.ANY );
     }
 
     public void imvTargetDragDrop(DragEvent dragEvent) {
@@ -38,7 +34,19 @@ public class Controller {
         txfSource.clear();
     }
 
+    public void txfTargetDragDrop(DragEvent dragEvent) {
+        Dragboard db = dragEvent.getDragboard();
+        txfTarget.setText(db.getString());
+        txfSource.clear();
+    }
+
+    public void txfTargetDragOver(DragEvent dragEvent) {
+        dragEvent.acceptTransferModes(TransferMode.ANY);
+    }
+    public void cmbTargetDragOver(DragEvent dragEvent) {
+        dragEvent.acceptTransferModes(TransferMode.ANY);
+    }
     public void imvTargetDragOver(DragEvent dragEvent) {
-        dragEvent.acceptTransferModes( TransferMode.ANY );
+        dragEvent.acceptTransferModes(TransferMode.ANY);
     }
 }
